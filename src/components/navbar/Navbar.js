@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import ProjectBar from './ProjectBar'
+
 const NavbarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -37,6 +39,7 @@ const Navbar = () => {
   return (
     <NavbarWrapper>
       <img src="https://cdn.filestackcontent.com/mEK2iFTfSR61gX6b7Bj8" alt="LevelUp Works logo" />
+      <ProjectBar />
       <ButtonContainer>
         <Button>Take Screenshot</Button>
         <Button bgCol='#F91D85' >Ask Teacher for help</Button>
