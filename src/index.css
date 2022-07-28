@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nunito';
+  margin: 0.5rem 0;
+}
+
+h1, h2 {
+  font-weight: 900;
+}
+
+h3, h4 {
+  font-weight: 700;
+}
+
+h5, h6 {
+  font-weight: 600;
+}
+
