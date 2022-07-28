@@ -6,7 +6,7 @@
 
 The LMS is intended to assist **two** main user groups, both of whom are able to register themselves on the platform:
 
-- **School Students** - Use the platform to get their lesson instructions, request help, and submit thier work.
+- **School Students** - Use the platform to get their lesson instructions, request help, and submit their work.
 
 - **School Teachers** - Are able to track student progress and help students where necessary.
 
