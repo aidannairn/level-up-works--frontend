@@ -1,14 +1,15 @@
-import styled from "styled-components"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/navbar/Navbar"
+import StudentProjectBuilder from "./pages/StudentProjectBuilder";
 
-const AppContainer = styled.div`
-  background-color: #B2E4FA;
-  min-height: 100vh;
-`
-
-const App = () => <AppContainer>
-    <Navbar />
-</AppContainer>
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/student-project-builder' element={<StudentProjectBuilder />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
 
 export default App
