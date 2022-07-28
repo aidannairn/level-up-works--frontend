@@ -1,24 +1,24 @@
 import styled from "styled-components"
 
-const PBContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-grow: 1;
   align-items: center;
   margin-left: 1rem;
   `
   
-  const PBHeadings = styled.div`
+  const Headings = styled.div`
   display: flex;
   width: 6rem;
   flex-direction: column;
 `
 
-const PBCircleContainer = styled.div`
+const CircleContainer = styled.div`
   display: flex;
   align-items: center;
 `
 
-const PBCircle = styled.div`
+const Circle = styled.div`
   width: 0.5rem;
   height: 0.5rem;
   margin: 0.25rem;
@@ -33,7 +33,7 @@ const PBCircle = styled.div`
   }
 `
 
-const PBActiveCircle = styled.div`
+const ActiveCircle = styled.div`
   width: 1.5rem;
   height: 1.5rem;
   margin: 0 0.25rem;
@@ -61,17 +61,17 @@ const ProjectBar = ({totalProjects = 15, heading = 'Introduction'}) => {
   const circles = [...Array(totalProjects)]
 
   return (
-    <PBContainer>
-      <PBHeadings>
+    <Container>
+      <Headings>
         <h3>PROJECT</h3>
         <h5>{heading.length > 17 ? heading.slice(0, 14) + '...' : heading}</h5>
-      </PBHeadings>
-      <PBCircleContainer>
+      </Headings>
+      <CircleContainer>
         {circles.map((_circle, i) => {
-          return i === 0 ? <PBActiveCircle key={`${i}[ACTIVE]`} ><h3>{++i}</h3></PBActiveCircle> : <PBCircle key={i} />
+          return i === 0 ? <ActiveCircle key={`${i}[ACTIVE]`} ><h3>{++i}</h3></ActiveCircle> : <Circle key={i} />
         })}
-      </PBCircleContainer>
-    </PBContainer>
+      </CircleContainer>
+    </Container>
   )
 }
 
