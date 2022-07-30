@@ -1,7 +1,20 @@
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+
 import Navbar from "../components/navbar/Navbar"
 import UserDashboard from '../components/user-dashboard/UserDashboard'
 
 const StudentProjectBuilder = () => {
+  const [projectIndex, setProjectIndex] = useState(1)
+  const [project, setProject] = useState(null)
+
+  const { REACT_APP_API_URL: url } = process.env
+
+  useEffect(() => {
+    axios.get(`${url}/student-project-builder/${projectIndex}`)
+    .then(res => setProject(res.data))
+  }, [])
+
   // START UserDashboard Items
   const learningObjectives = {
     sidebarHeading: 'Learning Objectives'
