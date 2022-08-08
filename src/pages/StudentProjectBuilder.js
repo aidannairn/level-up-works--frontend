@@ -3,10 +3,12 @@ import axios from 'axios'
 
 import Navbar from "../components/navbar/Navbar"
 import UserDashboard from '../components/user-dashboard/UserDashboard'
+import LearningObjectives from '../components/user-dashboard/project-builder/LearningObjectives'
 
 const StudentProjectBuilder = () => {
   const [projectIndex, setProjectIndex] = useState(1)
-  const [project, setProject] = useState(null)
+  const [project, setProject] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
 
   const { REACT_APP_API_URL: url } = process.env
 
@@ -15,9 +17,19 @@ const StudentProjectBuilder = () => {
     .then(res => setProject(res.data))
   }, [])
 
+  useEffect(() => {
+    if (!Object.keys(project).length) {
+      setIsLoading(true)
+    } else {
+      setIsLoading(false)
+    }
+  }, [project])
+
   // START UserDashboard Items
   const learningObjectives = {
-    sidebarHeading: 'Learning Objectives'
+    sidebarHeading: 'Learning Objectives',
+    component: LearningObjectives,
+    contents: project.learningObjectives
   }
 
   const instructions = {
@@ -55,7 +67,9 @@ const StudentProjectBuilder = () => {
     takeTheQuiz
   ]
 
-  return (
+  return isLoading ? (
+    null
+  ) : (
     <>
       <Navbar/>
       <UserDashboard items={userDashboardItems} />
